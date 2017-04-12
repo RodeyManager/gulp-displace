@@ -44,9 +44,8 @@ var displace = function(options){
         if (file.isBuffer()) {
             try {
                 var content = getFileContent(file.path) || file.contents.toString('utf8') || '';
-                content = placeString(content, option);
-                console.log(content);
-                file.contents = new Buffer(content);
+                var discontent = placeString(content, option) || content;
+                file.contents = new Buffer(discontent);
             }
             catch (err) {
                 this.emit('error', new PluginError(PLUGIN_NAME, ''));
