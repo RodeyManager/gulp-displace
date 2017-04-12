@@ -1,0 +1,1 @@
+Replace the server + port values in the default location with your container's hostname + port.
