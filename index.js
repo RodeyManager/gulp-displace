@@ -1,21 +1,19 @@
 /**
  * Created by Rodey on 2017/4/5.
  */
-var fs          = require('fs'),
+
+'use strict';
+
+const
+    fs          = require('fs'),
     util        = require('util'),
     through2    = require('through2'),
     PluginError = require('gulp-util').PluginError;
 
-var PLUGIN_NAME = 'gulp-displace';
-
-//获取文件内容
-function getFileContent(file){
-    if(!fs.existsSync(file)) return '';
-    return fs.readFileSync(file, { encoding: 'utf8' });
-}
+const PLUGIN_NAME = 'gulp-displace';
 
 function placeString(content, options){
-    var search = options.search,
+    let search = options.search,
         result = options.result;
 
     if(search instanceof RegExp){
@@ -30,11 +28,15 @@ function placeString(content, options){
 }
 
 var displace = function(options){
-    var option = util._extend({
+    let option = util._extend({
         search: null,
         result: null
     }, options || {});
     return through2.obj(function(file, enc, next){
+
+        if(file.isNull()){
+            return next(null, file);
+        }
 
         if (file.isStream()) {
             this.emit('error', new PluginError(PLUGIN_NAME, 'Stream content is not supported'));
@@ -43,8 +45,8 @@ var displace = function(options){
 
         if (file.isBuffer()) {
             try {
-                var content = getFileContent(file.path) || file.contents.toString('utf8') || '';
-                var discontent = placeString(content, option) || content;
+                let content = file.contents.toString('utf8') || '';
+                let discontent = placeString(content, option) || content;
                 file.contents = new Buffer(discontent);
             }
             catch (err) {
