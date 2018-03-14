@@ -1,33 +1,30 @@
 {
-  "name": "gulp-displace",
-  "version": "1.0.2",
-  "description": "find string displace",
-  "main": "index.js",
-  "directories": {
-    "example": "example"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RodeyManager/gulp-displace.git"
-  },
-  "keywords": [
-    "gulp",
-    "gupack"
-  ],
-  "author": "Rodey Luo",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RodeyManager/gulp-displace/issues"
-  },
-  "homepage": "https://github.com/RodeyManager/gulp-displace#readme",
-  "dependencies": {
-    "gulp-util": "^3.0.8",
-    "through2": "^2.0.3"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1"
-  }
+    "name": "gulp-displace",
+    "version": "1.0.3",
+    "description": "find string displace",
+    "main": "index.js",
+    "directories": {
+        "example": "example"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/RodeyManager/gulp-displace.git"
+    },
+    "keywords": ["gulp", "gupack"],
+    "author": "Rodey Luo",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/RodeyManager/gulp-displace/issues"
+    },
+    "homepage": "https://github.com/RodeyManager/gulp-displace#readme",
+    "dependencies": {
+        "plugin-error": "^1.0.1",
+        "through2": "^2.0.3"
+    },
+    "devDependencies": {
+        "gulp": "^3.9.1"
+    }
 }

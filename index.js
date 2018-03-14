@@ -8,7 +8,7 @@ const
     fs          = require('fs'),
     util        = require('util'),
     through2    = require('through2'),
-    PluginError = require('gulp-util').PluginError;
+    PluginError = require('plugin-error');
 
 const PLUGIN_NAME = 'gulp-displace';
 
