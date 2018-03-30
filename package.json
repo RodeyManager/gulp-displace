@@ -1,6 +1,6 @@
 {
     "name": "gulp-displace",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "find string displace",
     "main": "index.js",
     "directories": {

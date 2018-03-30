@@ -50,7 +50,7 @@ var displace = function(options){
                 file.contents = new Buffer(discontent);
             }
             catch (err) {
-                this.emit('error', new PluginError(PLUGIN_NAME, ''));
+                this.emit('error', new PluginError(PLUGIN_NAME, err.message));
             }
         }
         this.push(file);
